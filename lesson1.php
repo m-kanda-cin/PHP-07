@@ -3,13 +3,16 @@
 // 氏名入力時に入力内容が表示されるようにプログラムを完成させてください。
 // プログラム内にバグが含まれているので正常に動くように修正してください。
 
-if (empty($_POST)) {
+if (!empty($_POST)) {   //条件が逆なので修正****
+
     $lastName = $_POST['last_name'];
     $firstName= $_POST['first_name'];
+
     if ($lastName != null && $firstName != null) {
         echo '私の名前は'.$lastName.$firstName.'です。';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -19,11 +22,11 @@ if (empty($_POST)) {
 </head>
 <body>
     <section>
-    <form action='./lesson.php' method="post">
+    <form action='./lesson1.php' method="post"> <!--指定URLの修正-->
         <label>姓</label>
         <input type="text" name="last_name"/>
         <label>名</label>
-        <input type="text" name="first_nae" />
+        <input type="text" name="first_name" />
         <input type="submit" value="送信する"/>
     </form>
     </section>
